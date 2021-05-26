@@ -1,0 +1,67 @@
+
+.dashboard {
+    height: 95vh;
+    width: 100vw;
+  }
+  .dashboard_sidebar {
+    box-sizing: border-box;
+    width: 20vw;
+    float: left;
+    position: absolute;
+  }
+ 
+  .dashboard_taskbox {
+    box-sizing: border-box;
+    width: 80vw;
+    height: 95vh;
+    overflow-y: scroll;
+    float: right;
+    position: unset;
+  }
+  .dashboard_courses {
+    width: 70vw;
+    margin: auto;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+  }
+  .dashboard_courses_header {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+  .dashboard_courses_header h2 {
+    float:left;
+    margin: 0px;
+  }
+  .dashboard_courses_header Button {
+    float: right;
+  }
+  .dashboard_courses_body {
+    display: inline-block;
+    height:auto;
+  }
+  .dashboard_teachers {
+    width: 70vw;
+    margin: auto;
+    margin-top: 20px;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+  }
+  .dashboard_teachers_header {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+  }
+  .dashboard_teachers_header h2 {
+    float:left;
+    margin: 0px;
+  }
+  .dashboard_teachers_header Button {
+    float: right;
+  }
+  .dashboard_teachers_body {
+    height:auto;
+  }
+  

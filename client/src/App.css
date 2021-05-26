@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  background-image: url(./others/HomepageBackGround.jpg);
+  background-size:cover;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.copyright {
+  border-top: 1px #000 solid;
+  margin: auto;
+  height: 5vh;
+  width: 100vw;
+  font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+  bottom: 0;
+}
+@import './styles/Header.css';
+@import './styles/Button.css';
+@import './styles/InputBox.css';
+@import './styles//SelectItem.css';
+@import './styles/HomePage.css';
+@import './styles/Login.css';
+@import './styles/Signup.css';
+@import './styles/ShowBox.css';
+@import './styles/Dashboard.css';
+@import './styles/Sidebar.css';
+@import './styles/CreateCoursePopUp.css';
+@import './styles/CourseBox.css'

@@ -1,0 +1,12 @@
+
+.LoginSignupBox {
+  padding-top: 40px;
+}
+.EducationalQuote {
+  width: 250px;
+  margin: auto;
+}
+.EducationalQuote img {
+  max-width: 100%;
+  height: auto;
+}

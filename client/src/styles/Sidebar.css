@@ -1,0 +1,17 @@
+.sideBar {
+    border-right: solid 2px #ccc;
+    height: 95vh;
+}
+.sideBar img {
+    border-radius: 50px;
+}
+.sideBar .profile_pic_button {
+    border: 0px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.sideBar .profile_pic_button:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}

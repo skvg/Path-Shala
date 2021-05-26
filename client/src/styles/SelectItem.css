@@ -1,0 +1,14 @@
+.SelectItem {
+    text-align: left;
+    width: 240px;
+    padding: 5px;
+    margin: auto;
+}
+.SelectItem select{
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+    border-radius: 10px;
+    border: 2px;
+    box-shadow: #eee;
+}

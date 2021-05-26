@@ -1,0 +1,36 @@
+.showbox{
+    width: 25%;
+    float: left;
+  }
+  .showbox_div {
+    width: 80%;
+    border: 1px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0px;
+  }
+  .showbox div img {
+    width: 100%;
+    height: 20vh;
+    border-radius: 5px;
+  }
+  .showbox div h3 {
+    margin: 2px;
+    color: #000;
+  }
+  .showbox .dashboard_taskbox div{
+    width: 70vw;
+    margin: auto;
+  }
+/* .showbox button:hover {
+  -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.1);
+}   */
