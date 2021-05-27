@@ -9,11 +9,11 @@ const app = express();
 
 
 // middlewares
+app.use(express.static('./public')) // for deployement on heroku
 app.use(express.json());
 app.use(cors());
 
 // DB config
-const connectionUrl = 'mongodb+srv://appman:MmKG8qFcxne6gcz3@cluster0.dptio.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,

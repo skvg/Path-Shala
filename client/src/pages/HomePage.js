@@ -10,7 +10,7 @@ const homePage = () => {
             <Header />
             <div className = "LoginSignupBox">
                 <div className="EducationalQuote">
-                    <img src={pic} alt="BigCo Inc. logo"/>
+                    <img src={pic} alt="Educational Pic"/>
                 </div>
                 <Link to = "/login" >
                     <Button className="Button" type="button" text="Log In" />
