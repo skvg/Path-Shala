@@ -8,7 +8,6 @@ class ShowBox extends React.Component {
         this.state = {
             token: localStorage.getItem('savedToken'),
             course: this.props.course,
-            checked: false,
             text: 'subscribe',
             className: 'Button',
             logout: false,
@@ -30,7 +29,7 @@ class ShowBox extends React.Component {
             }
         })
         if(flag){
-            this.setState({text: 'Unsubscribe', checked: true, className: 'Button_red'})
+            this.setState({text: 'Unsubscribe', className: 'Button_red'})
         }
     }
     subscribeCourse() {
@@ -43,11 +42,11 @@ class ShowBox extends React.Component {
             console.log(e)
         })
     }
+    componentDidMount() {
+        this.check()
+    }
 
     render () {
-        if(this.state.course && !(this.state.checked)){
-            this.check()
-        }
         return (
             <div className = "showbox">
                 <div className = "showbox_div" onClick = {this.props.onClick} >

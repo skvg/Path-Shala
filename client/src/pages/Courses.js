@@ -9,10 +9,8 @@ class courses extends React.Component {
         super(props)
         this.state = {
             token: localStorage.getItem('savedToken'),
-            courses_avail: false,
             courses: [],
             user: {},
-            user_avail: false,
             redirect_to_dashboard: false,
         }
         this.getAllcourses = this.getAllcourses.bind(this)
@@ -25,10 +23,9 @@ class courses extends React.Component {
         axios.get(`${process.env.REACT_APP_HOST}/all_courses`, {headers: {"Authorization" : authToken}} )
         .then((res) => {
             const courses = res.data
-            this.setState({courses: courses, courses_avail: true})
+            this.setState({courses: courses})
         })
         .catch((e) => {
-            this.setState({courses_avail: true})
             console.log(e)
         })
     }
@@ -36,7 +33,7 @@ class courses extends React.Component {
         const authToken = ('Bearer ').concat(this.state.token)
         axios.get(`${process.env.REACT_APP_HOST}/user`, {headers: {"Authorization" : authToken}})
         .then((res) => {
-            this.setState({user: res.data, user_avail: true})
+            this.setState({user: res.data})
         })
         .catch((e) => {
             this.setState({logout: true})
@@ -46,14 +43,12 @@ class courses extends React.Component {
     changeState(value) {
         this.setState({redirect_to_dashboard: value})
     }
+    componentDidMount() {
+        this.getUser()
+        this.getAllcourses()
+    }
 
     render() {
-        if(!this.state.user_avail){
-            this.getUser()
-        }
-        if(!this.state.courses_avail){
-            this.getAllcourses()
-        }
         if(this.state.redirect_to_dashboard){
             return(
                 <Redirect to ="/dashboard" />

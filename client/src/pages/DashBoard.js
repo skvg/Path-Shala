@@ -14,8 +14,6 @@ class dashBoard extends React.Component {
         this.state = {
             logout: false,
             token: localStorage.getItem('savedToken'),
-            user_available: false,
-            courses_avail: false,
             teachers_page: false,
             courses_page: false,
             CreateCoursePopUp: false,
@@ -59,8 +57,7 @@ class dashBoard extends React.Component {
         const authToken = ('Bearer ').concat(this.state.token)
         axios.get(`${process.env.REACT_APP_HOST}/course`, {headers: {"Authorization" : authToken}})
         .then((res) => {
-            console.log(res)
-            this.setState({courses_info: res.data, courses_avail: true})
+            this.setState({courses_info: res.data})
         })
         .catch ((e) => {
             console.log(e)
@@ -70,7 +67,7 @@ class dashBoard extends React.Component {
         const authToken = ('Bearer ').concat(this.state.token)
         axios.get(`${process.env.REACT_APP_HOST}/user`, {headers: {"Authorization" : authToken}})
         .then((res) => {
-            this.setState({user_available: true, user: res.data})
+            this.setState({user: res.data})
         })
         .catch((e) => console.log(e))
     }
@@ -86,9 +83,13 @@ class dashBoard extends React.Component {
         axios.post(`${process.env.REACT_APP_HOST}/course`, courseObject,{headers: {"Authorization" : authToken}} )
         .then((res) => {
             this.CreateCoursePopUp()
-            this.setState({courses_avail: false})
+            this.getCourses()
         })
         .catch((e) => console.log(e))
+    }
+    componentDidMount() {
+        this.getUser()
+        this.getCourses()
     }
 
     render(){
@@ -106,12 +107,6 @@ class dashBoard extends React.Component {
             return(
                 <Redirect to = "/courses" />
             )
-        }
-        if(!this.state.user_available){
-            this.getUser()
-        }
-        if(!this.state.courses_avail){
-            this.getCourses()
         }
         return (
             <div className = 'dashboard'>
